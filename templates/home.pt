@@ -25,7 +25,7 @@
                             <h1>pyjokes</h1>
                             <p>One line jokes for programmers (jokes as a service)</p>
                         </header>
-                        <pre id="pyjoke"><code>Why did the programmer quit his job? Because he didn't get arrays.</code></pre>
+                        <pre id="pyjoke"><code><noscript>Why did the programmer quit his job? Because he didn't get arrays.</noscript></code></pre>
                     </div>
                 </div>
             </div>

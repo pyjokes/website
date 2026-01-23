@@ -174,7 +174,7 @@ const jokes = [
     "Programmers are tools for converting caffeine into code.",
     "There are three kinds of people: those who can count and those who can't.",
     "Why do programmers prefer dark mode? Because light attracts bugs."
-]
+];
 
 const jokeElement = document.getElementById("pyjoke").getElementsByTagName("code")[0];
 
