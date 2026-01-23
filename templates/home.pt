@@ -1,0 +1,75 @@
+<div metal:use-macro="layout">
+  <div metal:fill-slot="head" tal:omit-tag="1">
+    <meta name="description" content="One line jokes for programmers (jokes as a service)" />
+    <meta property="og:url" content="https://pyjok.es/" />
+    <meta property="og:title" content="${page.title}" />
+    <meta property="og:description" content="One line jokes for programmers (jokes as a service)" />
+    <meta name="twitter:title" content="${page.title}" />
+    <meta name="twitter:description" content="One line jokes for programmers (jokes as a service)" />
+  </div>
+
+  <div metal:fill-slot="title" tal:omit-tag="1">Home</div>
+
+  <div metal:fill-slot="scripts">
+    <script src="/js/pyjokes.js"></script>
+  </div>
+
+  <section metal:fill-slot="content">
+    <!-- Home -->
+        <article id="top" class="wrapper style1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                        <img src="/images/pyjokes.png" />
+                        <header>
+                            <h1>pyjokes</h1>
+                            <p>One line jokes for programmers (jokes as a service)</p>
+                        </header>
+                        <pre id="pyjoke"><code>Why did the programmer quit his job? Because he didn't get arrays.</code></pre>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="top" class="wrapper style2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div tal:content="structure page.html"></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+		<!-- Portfolio -->
+        <article id="portfolio" class="wrapper style3">
+            <div class="container">
+                <header>
+                    <h2>Friends of Pyjokes</h2>
+                </header>
+                <div class="row">
+                    <div class="col-4 col-6-medium col-12-small">
+                        <article class="box style2">
+                            <a href="https://2025.pyconuk.org/" class="image featured"><img src="/images/pyconuk-bee.jpg" alt="" /></a>
+                            <h3><a href="https://2025.pyconuk.org/">PyCon UK</a></h3>
+                            <p>The UK's annual Python conference</p>
+                        </article>
+                    </div>
+                    <div class="col-4 col-6-medium col-12-small">
+                        <article class="box style2">
+                            <a href="https://europython.eu/" class="image featured"><img src="/images/europython.png" alt="" /></a>
+                            <h3><a href="https://europython.eu/">EuroPython</a></h3>
+                            <p>Europe's longest-running community-driven Python conference</p>
+                        </article>
+                    </div>
+                    <div class="col-4 col-6-medium col-12-small">
+                        <article class="box style2">
+                            <a href="https://www.python.org/psf-landing/" class="image featured"><img src="/images/python.svg" alt="" /></a>
+                            <h3><a href="https://www.python.org/psf-landing/">Python Software Foundation</a></h3>
+                            <p>The charitable organisation behind the Python programming language</p>
+                        </article>
+                    </div>
+            </div>
+        </article>
+  </section>
+</div>

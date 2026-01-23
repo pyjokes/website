@@ -1,0 +1,4 @@
+pages_dir: pages
+static_dir: static
+templates_dir: templates
+output_dir: www
