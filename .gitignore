@@ -1,3 +1,6 @@
 www
+apache2
+csv
+analytics
 .DS_Store
 poetry.lock
