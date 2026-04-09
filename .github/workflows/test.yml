@@ -28,6 +28,5 @@ jobs:
       env:
         BEEMO_CONFIG: config.yml
       run: |
-        mkdir www
         python scripts/pyjokes_to_js.py
-        beemo
+        beemo build

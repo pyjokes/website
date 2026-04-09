@@ -1,4 +1,15 @@
-pages_dir: pages
-static_dir: static
 templates_dir: templates
-output_dir: www
+csv_dir: csv
+
+build:
+  pages_dir: pages
+  static_dir: static
+  output_dir: www
+
+logs:
+  logs_dir: apache2
+  pattern: "pyjok.es-access*"
+
+analytics:
+  output_dir: analytics
+  base_url: https://pyjok.es
