@@ -1,29 +1,29 @@
 <div metal:use-macro="layout">
-  <div metal:fill-slot="head" tal:omit-tag="1">
-    <meta name="description" content="One line jokes for programmers (jokes as a service)" />
-    <meta property="og:url" content="https://pyjok.es/" />
-    <meta property="og:title" content="${page.title}" />
-    <meta property="og:description" content="One line jokes for programmers (jokes as a service)" />
-    <meta name="twitter:title" content="${page.title}" />
-    <meta name="twitter:description" content="One line jokes for programmers (jokes as a service)" />
-  </div>
+    <div metal:fill-slot="head" tal:omit-tag="1">
+        <meta name="description" content="One line jokes for programmers (jokes as a service)" />
+        <meta property="og:url" content="${site.config.base_url}" />
+        <meta property="og:title" content="${page.title}" />
+        <meta name="twitter:title" content="${page.title}" />
+        <meta property="og:description" content="${page.description}" />
+        <meta name="twitter:description" content="${page.description}" />
+    </div>
 
-  <div metal:fill-slot="title" tal:omit-tag="1">Home</div>
+    <div metal:fill-slot="title" tal:omit-tag="1">Home</div>
 
-  <div metal:fill-slot="scripts">
-    <script src="/js/pyjokes.js"></script>
-  </div>
+    <div metal:fill-slot="scripts">
+        <script src="/js/pyjokes.js"></script>
+    </div>
 
-  <section metal:fill-slot="content">
-    <!-- Home -->
+    <section metal:fill-slot="content">
+        <!-- Home -->
         <article id="top" class="wrapper style1">
             <div class="container">
                 <div class="row">
                     <div class="col-12" style="text-align: center;">
                         <img src="/images/pyjokes.png" />
                         <header>
-                            <h1>pyjokes</h1>
-                            <p>One line jokes for programmers (jokes as a service)</p>
+                            <h1>${page.title}</h1>
+                            <p>${page.description}</p>
                         </header>
                         <pre id="pyjoke"><code><noscript>Why did the programmer quit his job? Because he didn't get arrays.</noscript></code></pre>
                     </div>
@@ -69,7 +69,8 @@
                             <p>The charitable organisation behind the Python programming language</p>
                         </article>
                     </div>
+                </div>
             </div>
         </article>
-  </section>
+    </section>
 </div>
