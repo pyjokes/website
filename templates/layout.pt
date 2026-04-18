@@ -13,10 +13,10 @@
 		<link rel="shortcut icon" href="/images/pyjokes.png" type="image/x-icon" />
 		<link rel="icon" href="/images/pyjokes.png" type="image/x-icon" />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://pyjok.es/images/pyjokes.png" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@pyjokes_bot" />
-		<meta name="twitter:image" content="https://pyjok.es/images/pyjokes.png" />
+		<meta property="og:image" content="${site.config.base_url}/images/pyjokes.png" />
+		<meta name="twitter:image" content="${site.config.base_url}/images/pyjokes.png" />
 		<meta metal:define-slot="head" />
 	</head>
 	<body class="is-preload">

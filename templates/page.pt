@@ -1,21 +1,21 @@
 <div metal:use-macro="layout">
-  <div metal:fill-slot="head" tal:omit-tag="1">
-    <meta name="description" content="The homepage of the Python North West user group" />
-    <meta property="og:url" content="https://pynw.org/" />
-    <meta property="og:title" content="${page.title}" />
-    <meta property="og:description" content="The homepage of the Python North West user group" />
-    <meta name="twitter:title" content="${page.title}" />
-    <meta name="twitter:description" content="The homepage of the Python North West user group" />
-  </div>
+    <div metal:fill-slot="head" tal:omit-tag="1">
+        <meta name="description" content="${page.description}" />
+        <meta property="og:url" content="${site.config.base_url}/${page.link}" />
+        <meta property="og:title" content="${page.title}" />
+        <meta name="twitter:title" content="${page.title}" />
+        <meta property="og:description" content="${page.description}" />
+        <meta name="twitter:description" content="${page.description}" />
+    </div>
 
-  <div metal:fill-slot="title" tal:omit-tag="1">${page.title}</div>
+    <div metal:fill-slot="title" tal:omit-tag="1">${page.title}</div>
 
-  <section metal:fill-slot="content">
+    <section metal:fill-slot="content">
         <article id="top" class="wrapper style1">
             <div class="container">
                 <div class="row">
                     <div class="col-4 col-5-large col-12-medium">
-                        <img src="/images/pythonnw.png" alt="" />
+                        <img src="/images/pyjokes.png" alt="" />
                     </div>
                     <div class="col-8 col-7-large col-12-medium">
                         <header>

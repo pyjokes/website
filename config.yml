@@ -1,5 +1,6 @@
 templates_dir: templates
 csv_dir: csv
+base_url: https://pyjok.es
 
 build:
   pages_dir: pages
@@ -12,4 +13,4 @@ logs:
 
 analytics:
   output_dir: analytics
-  base_url: https://pyjok.es
+  manifest_path: www/manifest.json
