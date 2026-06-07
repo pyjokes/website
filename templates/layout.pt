@@ -87,13 +87,21 @@
         if (!btn) return;
         btn.addEventListener("click", function () {
           var root = document.documentElement;
-          var current = root.getAttribute("data-theme");
-          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          var effective = current || (prefersDark ? "dark" : "light");
+          var system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          var effective = root.getAttribute("data-theme") || system;
           var next = effective === "dark" ? "light" : "dark";
-          root.setAttribute("data-theme", next);
+          if (next === system) {
+            // Back in step with the OS: drop the override so it follows the system.
+            root.removeAttribute("data-theme");
+          } else {
+            root.setAttribute("data-theme", next);
+          }
           try {
-            localStorage.setItem("theme", next);
+            if (next === system) {
+              localStorage.removeItem("theme");
+            } else {
+              localStorage.setItem("theme", next);
+            }
           } catch (e) {}
         });
       })();
