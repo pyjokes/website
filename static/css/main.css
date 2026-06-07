@@ -4,7 +4,7 @@
    ========================================================================= */
 
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
 
   --content-width: 960px;
   --radius: 12px;
@@ -15,6 +15,40 @@
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo,
     Consolas, "Liberation Mono", monospace;
 
+  /* light palette (default) — a "light editor" take on the terminal theme */
+  --bg: #fbfaf6;
+  --surface: #f3f1ea;
+  --surface-2: #e9e5da;
+  --text: #1c1b17;
+  --muted: #6c6657;
+  --border: #e2ddcf;
+  --accent: #b5820c;      /* deep honey for contrast on light */
+  --accent-soft: rgba(181, 130, 12, 0.12);
+  --term-green: #1a7f4b;  /* prompt / output */
+  --term-red: #ff5f56;
+  --term-yellow: #ffbd2e;
+  --term-grn: #27c93f;
+  --code-bg: #f6f3ec;
+  --nav-bg: rgba(251, 250, 246, 0.85);
+  --selection: rgba(181, 130, 12, 0.22);
+  --shadow: 0 1px 2px rgba(28, 26, 20, 0.06), 0 12px 32px rgba(28, 26, 20, 0.1);
+
+  /* syntax (Pygments) — light */
+  --syn-comment: #6a737d;
+  --syn-keyword: #d73a49;
+  --syn-string: #032f62;
+  --syn-number: #005cc5;
+  --syn-func: #6f42c1;
+  --syn-class: #6f42c1;
+  --syn-builtin: #005cc5;
+  --syn-var: #e36209;
+  --syn-op: #d73a49;
+  --syn-tag: #22863a;
+  --syn-err: #b31d28;
+}
+
+/* Dark palette, applied when the visitor explicitly chooses dark. */
+:root[data-theme="dark"] {
   --bg: #0e1016;
   --surface: #161922;
   --surface-2: #1f2430;
@@ -23,15 +57,15 @@
   --border: #2a3040;
   --accent: #f6c343;      /* honey / bee */
   --accent-soft: rgba(246, 195, 67, 0.14);
-  --term-green: #5ce08f;  /* prompt / output */
+  --term-green: #5ce08f;
   --term-red: #ff5f56;
   --term-yellow: #ffbd2e;
   --term-grn: #27c93f;
   --code-bg: #0a0c11;
+  --nav-bg: rgba(14, 16, 22, 0.85);
   --selection: rgba(246, 195, 67, 0.28);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.45);
 
-  /* syntax (Pygments) — dark */
   --syn-comment: #8b949e;
   --syn-keyword: #ff7b72;
   --syn-string: #a5d6ff;
@@ -43,6 +77,48 @@
   --syn-op: #ff7b72;
   --syn-tag: #7ee787;
   --syn-err: #ffa198;
+}
+
+/* Auto mode: no explicit choice -> follow the OS preference. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0e1016;
+    --surface: #161922;
+    --surface-2: #1f2430;
+    --text: #e8e4d8;
+    --muted: #99a0ad;
+    --border: #2a3040;
+    --accent: #f6c343;
+    --accent-soft: rgba(246, 195, 67, 0.14);
+    --term-green: #5ce08f;
+    --term-red: #ff5f56;
+    --term-yellow: #ffbd2e;
+    --term-grn: #27c93f;
+    --code-bg: #0a0c11;
+    --nav-bg: rgba(14, 16, 22, 0.85);
+    --selection: rgba(246, 195, 67, 0.28);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.45);
+
+    --syn-comment: #8b949e;
+    --syn-keyword: #ff7b72;
+    --syn-string: #a5d6ff;
+    --syn-number: #79c0ff;
+    --syn-func: #d2a8ff;
+    --syn-class: #f0883e;
+    --syn-builtin: #79c0ff;
+    --syn-var: #ffa657;
+    --syn-op: #ff7b72;
+    --syn-tag: #7ee787;
+    --syn-err: #ffa198;
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 *,
@@ -126,7 +202,7 @@ h4 {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(14, 16, 22, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: saturate(160%) blur(12px);
   -webkit-backdrop-filter: saturate(160%) blur(12px);
   border-bottom: 1px solid var(--border);
@@ -177,6 +253,55 @@ h4 {
   background: var(--surface-2);
   color: var(--text);
   text-decoration: none;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  margin-left: 0.25rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Show the icon for the theme you'd switch TO: moon while light, sun while dark. */
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle .icon-sun {
+    display: block;
+  }
+  :root:not([data-theme]) .theme-toggle .icon-moon {
+    display: none;
+  }
 }
 
 /* -------------------------------------------------------------------------
