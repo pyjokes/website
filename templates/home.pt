@@ -1,76 +1,72 @@
-<div metal:use-macro="layout">
-    <div metal:fill-slot="head" tal:omit-tag="1">
-        <meta name="description" content="One line jokes for programmers (jokes as a service)" />
-        <meta property="og:url" content="${site.config.base_url}" />
-        <meta property="og:title" content="${page.title}" />
-        <meta name="twitter:title" content="${page.title}" />
-        <meta property="og:description" content="${page.description}" />
-        <meta name="twitter:description" content="${page.description}" />
-    </div>
+<main metal:use-macro="layout">
+  <div metal:fill-slot="head" tal:omit-tag="1">
+    <meta name="description" content="One line jokes for programmers (jokes as a service)" />
+    <meta property="og:url" content="${site.config.base_url}/" />
+    <meta property="og:title" content="${page.title}" />
+    <meta name="twitter:title" content="${page.title}" />
+    <meta property="og:description" content="${page.description}" />
+    <meta name="twitter:description" content="${page.description}" />
+  </div>
 
-    <div metal:fill-slot="title" tal:omit-tag="1">Home</div>
+  <div metal:fill-slot="title" tal:omit-tag="1">Home</div>
 
-    <div metal:fill-slot="scripts">
-        <script src="/js/pyjokes.js"></script>
-    </div>
+  <div metal:fill-slot="scripts">
+    <script src="/js/pyjokes.js"></script>
+  </div>
 
-    <section metal:fill-slot="content">
-        <!-- Home -->
-        <article id="top" class="wrapper style1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12" style="text-align: center;">
-                        <img src="/images/pyjokes.png" />
-                        <header>
-                            <h1>${page.title}</h1>
-                            <p>${page.description}</p>
-                        </header>
-                        <pre id="pyjoke"><code><noscript>Why did the programmer quit his job? Because he didn't get arrays.</noscript></code></pre>
-                    </div>
-                </div>
-            </div>
-        </article>
+  <main metal:fill-slot="content" class="site-main">
+    <section class="hero container">
+      <img class="logo" src="/images/pyjokes.png" alt="pyjokes" />
+      <h1>${page.title}<span class="cursor">_</span></h1>
+      <p class="tagline">${page.description}</p>
 
-        <article id="top" class="wrapper style2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-8">
-                        <div tal:content="structure page.html"></div>
-                    </div>
-                </div>
-            </div>
-        </article>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="terminal-title">pyjoke</span>
+        </div>
+        <div class="terminal-body">
+          <div class="term-cmd"><span class="prompt">$</span>pyjoke</div>
+          <pre id="pyjoke"><code><noscript>Why did the programmer quit his job? Because he didn't get arrays.</noscript></code></pre>
+        </div>
+      </div>
 
-		<!-- Portfolio -->
-        <article id="portfolio" class="wrapper style3">
-            <div class="container">
-                <header>
-                    <h2>Friends of Pyjokes</h2>
-                </header>
-                <div class="row">
-                    <div class="col-4 col-6-medium col-12-small">
-                        <article class="box style2">
-                            <a href="https://pyconuk.org/" class="image featured"><img src="/images/pyconuk-bee.jpg" alt="" /></a>
-                            <h3><a href="https://pyconuk.org/">PyCon UK</a></h3>
-                            <p>The UK's annual Python conference</p>
-                        </article>
-                    </div>
-                    <div class="col-4 col-6-medium col-12-small">
-                        <article class="box style2">
-                            <a href="https://europython.eu/" class="image featured"><img src="/images/europython.png" alt="" /></a>
-                            <h3><a href="https://europython.eu/">EuroPython</a></h3>
-                            <p>Europe's longest-running community-driven Python conference</p>
-                        </article>
-                    </div>
-                    <div class="col-4 col-6-medium col-12-small">
-                        <article class="box style2">
-                            <a href="https://www.python.org/psf-landing/" class="image featured"><img src="/images/python.svg" alt="" /></a>
-                            <h3><a href="https://www.python.org/psf-landing/">Python Software Foundation</a></h3>
-                            <p>The charitable organisation behind the Python programming language</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </article>
+      <p class="install"><code>pip install pyjokes</code></p>
     </section>
-</div>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <div tal:content="structure page.html"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Friends of pyjokes</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <a class="thumb" href="https://pyconuk.org/"><img src="/images/pyconuk-bee.jpg" alt="" /></a>
+            <h3><a href="https://pyconuk.org/">PyCon UK</a></h3>
+            <p>The UK's annual Python conference</p>
+          </article>
+          <article class="card">
+            <a class="thumb" href="https://europython.eu/"><img src="/images/europython.png" alt="" /></a>
+            <h3><a href="https://europython.eu/">EuroPython</a></h3>
+            <p>Europe's longest-running community-driven Python conference</p>
+          </article>
+          <article class="card">
+            <a class="thumb" href="https://www.python.org/psf-landing/"><img src="/images/python.svg" alt="" /></a>
+            <h3><a href="https://www.python.org/psf-landing/">Python Software Foundation</a></h3>
+            <p>The charitable organisation behind the Python programming language</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</main>
