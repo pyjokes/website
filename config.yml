@@ -9,7 +9,8 @@ build:
 
 logs:
   logs_dir: apache2
-  pattern: "pyjok.es-access*"
+  pattern: "pyjok.es-access*gz"
+  live_pattern: "pyjok.es-access*"
 
 analytics:
   output_dir: analytics
