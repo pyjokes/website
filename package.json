@@ -1,0 +1,21 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "The source of web content for the pyjokes website [pyjok.es](https://pyjok.es) which is\r built using a static site generator called [beemo](https://github.com/bennuttall/beemo).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pyjokes/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pyjokes/website/issues"
+  },
+  "homepage": "https://github.com/pyjokes/website#readme"
+}

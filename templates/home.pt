@@ -51,12 +51,12 @@
         </div>
         <div class="card-grid">
           <article class="card">
-            <a class="thumb" href="https://pyconuk.org/"><img src="/images/pyconuk-bee.jpg" alt="" /></a>
+            <a class="thumb" href="https://pyconuk.org/"><img src="/images/pyconuk-bee.png" alt="PyCon Uk logo image" /></a>
             <h3><a href="https://pyconuk.org/">PyCon UK</a></h3>
             <p>The UK's annual Python conference</p>
           </article>
           <article class="card">
-            <a class="thumb" href="https://europython.eu/"><img src="/images/europython.png" alt="" /></a>
+            <a class="thumb" href="https://europython.eu/"><img src="/images/europython.png" alt="EuroPython logo" /></a>
             <h3><a href="https://europython.eu/">EuroPython</a></h3>
             <p>Europe's longest-running community-driven Python conference</p>
           </article>
