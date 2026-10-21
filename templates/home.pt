@@ -61,7 +61,7 @@
             <p>Europe's longest-running community-driven Python conference</p>
           </article>
           <article class="card">
-            <a class="thumb" href="https://www.python.org/psf-landing/"><img src="/images/python.svg" alt="" /></a>
+            <a class="thumb" href="https://www.python.org/psf-landing/"><img src="/images/python.svg" alt="Python Language logo" /></a>
             <h3><a href="https://www.python.org/psf-landing/">Python Software Foundation</a></h3>
             <p>The charitable organisation behind the Python programming language</p>
           </article>
